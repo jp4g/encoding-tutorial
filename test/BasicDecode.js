@@ -55,9 +55,9 @@ describe("Basic Decode", () => {
         const binary = ethers.utils.arrayify(hash)
         const signed = await signers[0].signMessage(binary)
         console.log('ethers says', ethers.utils.verifyMessage(binary, signed))
-        console.log('recoverKey says', await instance.recoverKey(binary, signed, 0))
+        console.log('recoverKey says', await instance.recoverKey(hash, signed, 0)) //@dev#1
         console.log('signed: ', signed)
-        await instance.secureSet(encoded, signed)
+        await instance.secureSet(encoded, signed) //@dev#2
         const flag = await instance.flag()
         const alsoFlag = await instance.alsoFlag()
         expect(flag).to.be.equal('signed yay')

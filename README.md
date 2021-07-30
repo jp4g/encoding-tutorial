@@ -11,5 +11,8 @@
 INFURA=&lt;infura key for your account&gt;
 </li>
 <li>Run the following command to test
-<pre>yarn test</pre>
+<pre>npx hardhat test</pre>
 </li>
+@dan13ram
+why does BasicDecode.js:57(ctrl+f '@dev#1') return ok
+but BasicDecode.js:60(ctrl+f '@dev#1') -> BasicDecode.sol:34 does not return what everything else does

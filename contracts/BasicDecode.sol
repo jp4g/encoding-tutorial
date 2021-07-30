@@ -31,12 +31,12 @@ contract BasicDecode is Metatx {
             (address, string, uint256)
         );
         console.log("From %s:", _flag);
-        address _recovered = recoverKey(keccak256(_data), _signature, 0);
+        address _recovered = recoverKey(keccak256(_data), _signature, 0); //dev#3
         console.log("Recovered (%s)", _recovered);
-        // console.log("From (%s)", _from);
-        // bool secure = _recovered == _from;
-        // require(secure, "message not from signer!");
-        // flag = _flag;
-        // alsoFlag = _alsoFlag;
+        console.log("From (%s)", _from);
+        bool secure = _recovered == _from;
+        require(secure, "!signer");
+        flag = _flag;
+        alsoFlag = _alsoFlag;
     }
 }
