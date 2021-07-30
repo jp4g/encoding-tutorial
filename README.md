@@ -6,7 +6,7 @@
 <li>Install dependencies with Yarn
 <pre>yarn</pre>
 </li>
-<li>Create .env file (you can copy `.sample-env`)
+<li>Create .env file
 <pre>ACCOUNT_PRIVATE_KEY=&lt;private key of your account&gt;
 INFURA=&lt;infura key for your account&gt;
 </li>
