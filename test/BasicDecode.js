@@ -51,7 +51,7 @@ describe("Basic Decode", () => {
             types,
             [signers[0].address, "signed yay", BN.from(307)]
         )
-        const hash = ethers.utils.id(encoded)
+        const hash = ethers.utils.keccak256(encoded)
         const binary = ethers.utils.arrayify(hash)
         const signed = await signers[0].signMessage(binary)
         console.log('ethers says', ethers.utils.verifyMessage(binary, signed))
